@@ -54,15 +54,16 @@ const allPlayers = [...players1, ...players2];
 const players1Final = [...players1, "Thiago", "Coutinho", "Perisic"];
 
 // 5.
-const { team1, x, team2 } = game.odds;
+const { team1, x: draw, team2 } = game.odds;
 
 // 6.
 function printGoals(...playerNames) {
-  console.log(...playerNames);
+  console.log(playerNames);
   console.log(playerNames.length);
 }
 printGoals("Davies", "Muller", "Lewandowski", "Kimmich");
 printGoals(...game.scored);
 
 // 7.
-console.log(team1 < team2 && "team1");
+team1 < team2 && console.log("team1");
+team1 > team2 && console.log("team2");

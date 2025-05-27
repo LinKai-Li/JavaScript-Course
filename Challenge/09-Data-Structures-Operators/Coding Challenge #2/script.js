@@ -43,14 +43,12 @@ const game = {
 
 // 1.
 for (const [index, name] of game.scored.entries()) {
-  console.log(`Goal ${index}: ${name}`);
+  console.log(`Goal ${index + 1}: ${name}`);
 }
 
 // 2.
 let sum = 0;
 for (const odd of Object.values(game.odds)) {
-  console.log(odd);
-  console.log(typeof odd);
   sum += odd;
 }
 
@@ -59,7 +57,8 @@ console.log(average);
 
 // 3.
 for (const [key, value] of Object.entries(game.odds)) {
-  console.log(`Odd of victory ${game[key] ?? "draw"}: ${value}`);
+  const teamStr = key === "x" ? "draw" : `victory ${game[key]}`;
+  console.log(`Odd of ${teamStr}: ${value}`);
 }
 
 // 4.

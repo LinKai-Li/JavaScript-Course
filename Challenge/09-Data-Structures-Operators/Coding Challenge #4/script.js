@@ -15,6 +15,6 @@ button.addEventListener("click", function () {
       second_part.replace(second_part[0], second_part[0].toUpperCase())
     );
     const result = camelCase.join("");
-    console.log(`${result}\t${"✅".repeat(index + 1)}`);
+    console.log(`${result.padEnd(20)}${"✅".repeat(index + 1)}`);
   }
 });

@@ -15,11 +15,8 @@ const gameEvents = new Map([
 ]);
 
 // 1.
-const set = new Set();
-for (const event of gameEvents.values()) {
-  set.add(event);
-}
-console.log([...set]);
+const events = [...new Set(gameEvents.values())];
+console.log(events);
 
 // 2.
 gameEvents.delete(64);

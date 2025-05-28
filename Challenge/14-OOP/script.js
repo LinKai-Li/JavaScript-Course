@@ -10,7 +10,7 @@ Car.prototype.accelerate = function () {
   console.log(this.speed);
 };
 
-Car.prototype.break = function () {
+Car.prototype.brake = function () {
   this.speed -= 5;
   console.log(this.speed);
 };
@@ -19,7 +19,7 @@ const car1 = new Car("BMW", 120);
 const car2 = new Car("Mercedes", 95);
 
 car1.accelerate();
-car1.break();
+car1.brake();
 
 car2.accelerate();
-car2.break();
+car2.brake();

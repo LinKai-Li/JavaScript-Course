@@ -23,3 +23,5 @@ car1.brake();
 
 car2.accelerate();
 car2.brake();
+
+console.dir(Car);

@@ -31,11 +31,11 @@ EV.prototype.accelerate = function () {
   this.speed += 20;
   this.charge--;
   console.log(
-    `${this.make} going at ${this.speed}km/h, with a charge of ${this.charge}%`
+    `${this.make} going at ${this.speed} km/h, with a charge of ${this.charge}%`
   );
 };
 
-const tesla = new EV("tesla", 120, 23);
+const tesla = new EV("Tesla", 120, 23);
 tesla.accelerate();
 tesla.chargeBattery(100);
 tesla.accelerate();

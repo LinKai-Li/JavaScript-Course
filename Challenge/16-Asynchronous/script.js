@@ -48,8 +48,8 @@ const whereAmI = function (lat, lng) {
     `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}`
   )
     .then((response) => {
-      if (!response.ok && response.status === 403) {
-        throw new Error("You reload too fast!");
+      if (!response.ok) {
+        throw new Error(`Problem with geocoding ${response.status}`);
       }
       return response.json();
     })
@@ -57,7 +57,7 @@ const whereAmI = function (lat, lng) {
       console.log(`You are in ${data.city}, ${data.countryName}`);
       return data.countryName;
     })
-    .catch((err) => console.error(err));
+    .catch((err) => console.error(`${err.message} 💥`));
 };
 
 const getCountryData = function (country) {

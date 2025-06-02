@@ -25,21 +25,23 @@ const createImage = function (imgPath) {
   });
 };
 
+let currentImg;
+
 createImage("img/img-1.jpg")
   .then((imgEl) => {
-    wait(2);
-    return imgEl;
+    currentImg = imgEl;
+    return wait(2);
   })
-  .then((imgEl) => {
-    imgEl.style.display = "none";
+  .then(() => {
+    currentImg.style.display = "none";
 
     return createImage("img/img-2.jpg");
   })
   .then((imgEl) => {
-    wait(2);
-    return imgEl;
+    currentImg = imgEl;
+    return wait(2);
   })
-  .then((imgEl) => {
-    imgEl.style.display = "none";
+  .then(() => {
+    currentImg.style.display = "none";
   })
   .catch((err) => console.error(err));

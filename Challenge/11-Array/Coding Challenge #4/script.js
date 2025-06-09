@@ -60,7 +60,7 @@ console.log(huskyWeight);
 // 2.
 const dogBothActivities = breeds.find(
   b => b.activities.includes('running') && b.activities.includes('fetch')
-);
+).breed;
 console.log(dogBothActivities);
 
 // 3.
@@ -72,9 +72,14 @@ const uniqueActivities = [...new Set(allActivities)];
 console.log(uniqueActivities);
 
 // 5.
-const index = uniqueActivities.findIndex(act => act === 'swimming');
-const swimmingAdjacent = uniqueActivities;
-swimmingAdjacent.splice(index, 1);
+const swimmingAdjacent = [
+  ...new Set(
+    breeds
+      .filter(b => b.activities.includes('swimming'))
+      .flatMap(b => b.activities)
+      .filter(act => act !== 'swimming')
+  ),
+];
 console.log(swimmingAdjacent);
 
 // 6.
